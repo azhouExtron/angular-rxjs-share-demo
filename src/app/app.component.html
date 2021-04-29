@@ -1,0 +1,36 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <a class="navbar-brand">test</a>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/nest"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact : true}"
+        >Nest Subscribe</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/list"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact : true}"
+        >List</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/autoComplete" routerLinkActive="active"
+        >AutoComplete</a
+      >
+    </li>
+  </ul>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
