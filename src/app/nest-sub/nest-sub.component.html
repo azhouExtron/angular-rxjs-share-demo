@@ -1,0 +1,36 @@
+<div class="container pt-3">
+  <button class="btn btn-secondary" (click)="onClick()">
+    {{buttonText}}
+  </button>
+  <h3>Nest Subscription</h3>
+  <button class="btn btn-warning " id="1">1</button>
+  <button class="btn btn-warning ml-2" id="2">2</button>
+  <button class="btn btn-warning ml-2" id="3">3</button>
+  <button class="btn btn-warning ml-2" id="4">4</button>
+  <button class="btn btn-warning ml-2" id="5">5</button>
+  <div>
+    The Request Id: <span style="color:red; font-size: 20px">{{id}}</span>
+  </div>
+
+  <div *ngIf="student">
+    The Student Detail:
+    <span style="color:red; font-size: 20px">
+      Id: {{student.id}}: name:{{student.name}}</span
+    >
+  </div>
+</div>
+
+<div class="container pt-3">
+  <div *ngIf="toShow">
+    <h3>rxjs</h3>
+    <div>
+      The Request Id: <span style="color:green; font-size: 20px">{{id}}</span>
+    </div>
+    <div *ngIf="(student$| async)">
+      the student detail:
+      <span style="color:green; font-size: 20px">
+        id {{(student$| async)?.id}} name: {{(student$| async)?.name}}</span
+      >
+    </div>
+  </div>
+</div>

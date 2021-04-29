@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-header">
+    {{title}}
+  </div>
+
+  <div class="card-body">
+    <div class="container">
+      <div class="row justify-content-between">
+
+        <div class="input-group">
+          <input
+              type="text"
+              class="form-control"
+              placeholder="Select a student"
+              [(ngModel)]="selectedStudent"
+              (selectItem)="studentSelected($event.item)"
+              [ngbTypeahead]="search"
+              [inputFormatter]="formatter"
+              [resultFormatter]="formatter"
+              #instance="ngbTypeahead"
+              (focus)="focus$.next($any($event).target.value)"
+              (click)="click$.next($any($event).target.value)"
+            />
+          <span class="input-group-prepend">
+              <button
+                type="button"
+                class="btn bg-transparent"
+                style="margin-left: -40px; z-index: 100;"
+                (click)="onClear()"
+              >
+                <i class="fa fa-times"></i>
+              </button>
+            </span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
